@@ -4,6 +4,7 @@ import OwlQuestions from './OwlQuestions';
 export default function OwlContainer() {
     return (
       <div className="container">
+        {/* <OwlQuestions /> */}
         {/* Header */}
         <header className="header">
           <h1>Owlify</h1>
