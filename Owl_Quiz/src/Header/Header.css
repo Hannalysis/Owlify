@@ -1,0 +1,15 @@
+/* Header */
+.header {
+    background-color: black;
+    font-family:"Kaushan Script", serif;
+    padding: 24px; 
+    border-radius: 10px;
+    box-shadow: 0 2px 5px darkgray;
+    margin-bottom:33%; /*Header pos*/
+  }
+  
+.header h1 {
+    margin: 0;
+    font-size: 3rem;
+    color:white;
+  }
