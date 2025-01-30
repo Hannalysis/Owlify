@@ -1,34 +1,94 @@
-import React from 'react';
+import React, { useState } from "react";
 import OwlQuestions from './OwlQuestions';
 
+import barnOwl from "../owl-images/barn-owl.png";
+import littleOwl from "../owl-images/little-owl.png";
+import longEaredOwl from "../owl-images/long-eared-owl.png";
+import shortEaredOwl from "../owl-images/short-eared-owl.png";
+
+
 export default function OwlContainer() {
-    return (
+    
+    // Array of owl species and their image paths
+    const owls = [
+      { name: "Barn Owl", image: barnOwl },
+      { name: "Little Owl", image: littleOwl },
+      { name: "Long Eared Owl", image: longEaredOwl },
+      { name: "Short Eared Owl", image: shortEaredOwl }
+    ];
+  
+  
+  // State for the current question
+  const [currentOwl, setCurrentOwl] = useState(getRandomOwl());
+  const [options, setOptions] = useState(shuffleOptions(currentOwl));
+  const [feedback, setFeedback] = useState(""); // Feedback for the user's answer
+
+  // Function to get a random owl
+  function getRandomOwl() {
+    return owls[Math.floor(Math.random() * owls.length)];
+  }
+
+  // Function to shuffle options (correct + random incorrect answers)
+  function shuffleOptions(correctOwl) {
+    const incorrectOptions = owls
+      .filter((owl) => owl.name !== correctOwl.name)
+      .map((owl) => owl.name);
+
+    const allOptions = [...incorrectOptions.slice(0, 2), correctOwl.name];
+    return allOptions.sort(() => Math.random() - 0.5); // Shuffle the options
+  }
+
+  // Function to handle answer selection
+  function handleAnswer(selectedOption) {
+    if (selectedOption === currentOwl.name) {
+      setFeedback("Correct! 🎉");
+    } else {
+      setFeedback(`Wrong! The correct answer is ${currentOwl.name}. 😢`);
+    }
+
+    // Load a new question after 2 seconds
+    setTimeout(() => {
+      const newOwl = getRandomOwl();
+      setCurrentOwl(newOwl);
+      setOptions(shuffleOptions(newOwl));
+      setFeedback("");
+    }, 2000);
+  }
+
+  
+  
+  return (
       <div className="container">
-          <OwlQuestions />
+         
         {/* Main Content */}
         <main className="content">
           {/* Image Container */}
           <div className="image-container">
-            <img
-              src="../owl-images/long-eared-owl.JPG"
-              alt="Owl"
-              className="owl-image"
-            />
+          <img src={currentOwl.image} alt="Owl" />
             <p className="question-mark">?</p>
           </div>
   
           {/* Buttons */}
-          <div className="button-container">
-            <button className="option-button">Option 1</button>
-            <button className="option-button">Option 2</button>
-            <button className="option-button">Option 3</button>
-          </div>
+         {/* Display Multiple-Choice Options */}
+      <div className="options-container">
+        {options.map((option, index) => (
+          <button
+            key={index}
+            className="option-button"
+            onClick={() => handleAnswer(option)}
+          >
+            {option}
+          </button>
+        ))}
+      </div>
         </main>
   
-        {/* Footer */}
-        <footer className="footer"></footer>
+       
+      {/* Display Feedback */}
+      <div className="feedback">
+        <p>{feedback}</p>
       </div>
-    );
-  };
-
+    </div>
+  );
+}
  
