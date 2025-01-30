@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css"; // CSS file for styling
 import OwlContainer from "./Owl-Container/Owl-Container";
 import OwlQuestions from "./Owl-Container/OwlQuestions";
+import Header from "./Header/Header.jsx"
 
 const data = [
   {question: "What is React?", answer: " React is a JavaScript library used to build user interfaces for web and native applications. "},
@@ -12,10 +13,8 @@ const data = [
 
 function App() {
   return <>
-    <OwlQuestions />
+    <Header />
     <OwlContainer/>
-
-    
   </>
 }
 

@@ -10,7 +10,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100vh;
   max-width: 600px;
   margin: 0 auto;
 }
@@ -91,4 +90,8 @@ body {
   height: 20px;
   background-color: #ccc;
   border-radius: 0 0 10px 10px;
+}
+
+img {
+  max-width: 400px; /* PH css - pls change */
 }
