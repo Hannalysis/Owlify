@@ -101,6 +101,7 @@ img {
 .feedback {
   color: white;
   font-size: larger;
+  height: 30px; /* limit thes container bouncing up when a feedback answer is displayed */
 }
 
 .options-container {
