@@ -22,6 +22,7 @@ export default function OwlContainer() {
   const [currentOwl, setCurrentOwl] = useState(getRandomOwl());
   const [options, setOptions] = useState(shuffleOptions(currentOwl));
   const [feedback, setFeedback] = useState(""); // Feedback for the user's answer
+  const [score, setScore] = useState(0); // Score state
 
   // Function to get a random owl
   function getRandomOwl() {
@@ -42,8 +43,10 @@ export default function OwlContainer() {
   function handleAnswer(selectedOption) {
     if (selectedOption === currentOwl.name) {
       setFeedback("Correct! 🎉");
+      setScore((prevScore) => prevScore + 1); // Increment score
     } else {
       setFeedback(`Wrong! The correct answer is ${currentOwl.name}. 😢`);
+      setScore((prevScore) => Math.max(prevScore - 1, 0));
     }
 
     // Load a new question after 2 seconds
@@ -62,6 +65,7 @@ export default function OwlContainer() {
          
         {/* Main Content */}
         <main className="content">
+       
           {/* Image Container */}
           <div className="image-container">
           <img src={currentOwl.image} alt="Owl" />
@@ -82,6 +86,10 @@ export default function OwlContainer() {
         ))}
       </div>
         </main>
+
+      <div>
+      <p className="score">Score: {score}</p> {/* Display score */}
+      </div>
   
        
       {/* Display Feedback */}

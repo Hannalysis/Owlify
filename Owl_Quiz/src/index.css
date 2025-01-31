@@ -22,6 +22,15 @@ h1 {
   line-height: 1.1;
 }
 
+.score {
+  font-size: 1.5rem; /* Adjust the size */
+  font-weight: bold; /* Make it bold */
+  color: #ffffff; /* Owl-like golden color */
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7); /* Add a soft shadow */
+  margin-top: 10px; /* Space from the header */
+  text-align: center; /* Center the text */
+}
+
 button {
   border-radius: 8px;
   border: 1px solid transparent;
