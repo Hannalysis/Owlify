@@ -5,7 +5,7 @@ import barnOwl from "../owl-images/barn-owl.png";
 import littleOwl from "../owl-images/little-owl.png";
 import longEaredOwl from "../owl-images/long-eared-owl.png";
 import shortEaredOwl from "../owl-images/short-eared-owl.png";
-
+import correctSoundOwl from "../owl-sounds/owl-hooting-223549.mp3"
 
 export default function OwlContainer() {
     
@@ -29,6 +29,8 @@ export default function OwlContainer() {
     return owls[Math.floor(Math.random() * owls.length)];
   }
 
+  const correctSound = new Audio(correctSoundOwl);
+
   // Function to shuffle options (correct + random incorrect answers)
   function shuffleOptions(correctOwl) {
     const incorrectOptions = owls
@@ -44,6 +46,7 @@ export default function OwlContainer() {
     if (selectedOption === currentOwl.name) {
       setFeedback("Correct! 🎉");
       setScore((prevScore) => prevScore + 1); // Increment score
+      correctSound.play(); // Play sound on correct answer
     } else {
       setFeedback(`Wrong! The correct answer is ${currentOwl.name}. 😢`);
       setScore((prevScore) => Math.max(prevScore - 1, 0));
