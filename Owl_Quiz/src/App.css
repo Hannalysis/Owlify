@@ -1,7 +1,6 @@
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #e0e0e0;
+  background-color: black;
   color: #333;
   text-align: center;
 }
@@ -14,21 +13,10 @@ body {
   margin: 0 auto;
 }
 
-/* Header */
-.header {
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.header h1 {
-  margin: 0;
-  font-size: 1.8rem;
-}
-
 /* Main Content */
 .content {
+  position: relative;
+  top: -90px;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -39,27 +27,37 @@ body {
 
 /* Image Container */
 .image-container {
-  position: relative;
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.owl-image {
-  border-radius: 15px;
-  width: 200px;
-  height: auto;
+  background-color: black;
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: 0 2px 2px darkgray;
 }
 
 .question-mark {
   position: absolute;
-  bottom: 10px;
+  bottom: -20px; /* To change height of ? */
   left: 50%;
   transform: translateX(-50%);
-  font-size: 2rem;
+  font-size: 7rem;
   font-weight: bold;
-  color: #333;
+  color: white;
+}
+
+/* The animation code */
+@keyframes silverWhite {
+  0%   {color: silver;}
+  20%  {color: lightgray;}
+  40%  {color: white;}
+  60% {color: white;}
+  80% {color: lightgray;}
+  100% {color: silver;}
+}
+
+/* The element to apply the animation to */
+.question-mark {
+  animation-name: silverWhite;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
 }
 
 /* Button Container */
@@ -70,18 +68,21 @@ body {
 }
 
 .option-button {
-  padding: 10px 20px;
+  padding: 16px 48px; /* Button sizes */
   border: none;
   border-radius: 10px;
-  background-color: #ffffff;
-  color: #333;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  background-color: black;
+  color: whitesmoke;
+  box-shadow: 0 2px 5px darkgray;
   cursor: pointer;
+  font-family: "Kaushan Script", serif;
+  font-size: 20px;
   transition: background-color 0.3s, transform 0.2s;
 }
 
 .option-button:hover {
-  background-color: #ddd;
+  background-color: silver;
+  color: black;
   transform: scale(1.05);
 }
 
@@ -93,5 +94,20 @@ body {
 }
 
 img {
-  max-width: 400px; /* PH css - pls change */
+  max-width: 600px; /* Slightly smaller than the smallest bird img width we have */
+  border-radius: 4px;
 }
+
+.feedback {
+  color: white;
+  font-size: larger;
+  height: 30px; /* limit thes container bouncing up when a feedback answer is displayed */
+}
+
+.options-container {
+  display: flex;
+  justify-content: space-between;
+  width: 600px;
+  margin-top: 20px;
+}
+
