@@ -7,6 +7,19 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100vh;
+}
+
+@media screen and (max-height: 1079px) {
+  .header {
+    display: none;
+  }
+}
+
+@media screen and (max-height: 700px) {
+  .score {
+    display: none;
+  }
 }
 
 body {
@@ -14,7 +27,6 @@ body {
   display: flex;
   place-items: center;
   min-width: 320px;
-  /* min-height: 100vh; */
 }
 
 h1 {
@@ -25,9 +37,8 @@ h1 {
 .score {
   font-size: 1.5rem; /* Adjust the size */
   font-weight: bold; /* Make it bold */
-  color: #ffffff; /* Owl-like golden color */
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7); /* Add a soft shadow */
-  margin-top: 10px; /* Space from the header */
+  font-family: "Kaushan Script", serif;;
+  color: #ffffff; 
   text-align: center; /* Center the text */
 }
 
@@ -43,21 +54,10 @@ button {
   transition: border-color 0.25s;
 }
 
-@media (prefers-color-scheme: dark) {
-  /* :root {
-    color: #213547;
-    background-color: black;
-  } */
-  /* button {
-    background-color: black;
-  } */
-}
-
 body {
   justify-content: center;
   background-image: url('./owl-images/night-forest-grey-edit.png'); /* Ensure this is behind the Owl-Container */
   background-repeat: no-repeat; /* Prevents the image from repeating */
   background-position: center; /* Centres the image */
-  /* background-size: 52%; */
   height: 100vh;
 }

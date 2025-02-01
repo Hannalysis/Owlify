@@ -44,11 +44,11 @@ export default function OwlContainer() {
   // Function to handle answer selection
   function handleAnswer(selectedOption) {
     if (selectedOption === currentOwl.name) {
-      setFeedback("Correct! 🎉");
+      setFeedback("🎉 Correct! 🎉");
       setScore((prevScore) => prevScore + 1); // Increment score
       correctSound.play(); // Play sound on correct answer
     } else {
-      setFeedback(`Wrong! The correct answer is ${currentOwl.name}. 😢`);
+      setFeedback(`  Wrong! The correct answer is ${currentOwl.name}. 😢`);
       setScore((prevScore) => Math.max(prevScore - 1, 0));
     }
 
@@ -64,9 +64,7 @@ export default function OwlContainer() {
   
   
   return (
-      <div className="container">
-         
-        {/* Main Content */}
+         <>
         <main className="content">
        
           {/* Image Container */}
@@ -90,16 +88,14 @@ export default function OwlContainer() {
       </div>
         </main>
 
-      <div>
+      <div className = "score-box">
       <p className="score">Score: {score}</p> {/* Display score */}
-      </div>
-  
-       
       {/* Display Feedback */}
       <div className="feedback">
         <p>{feedback}</p>
+        </div>
       </div>
-    </div>
+      </>
   );
 }
  
