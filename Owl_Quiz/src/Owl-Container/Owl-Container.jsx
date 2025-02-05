@@ -35,6 +35,7 @@ export default function OwlContainer() {
   function shuffleOptions(correctOwl) {
     const incorrectOptions = owls
       .filter((owl) => owl.name !== correctOwl.name)
+      .sort(() => Math.random() - 0.5) // Shuffles the incorrect options to ensure any have a chance to appear on the buttons
       .map((owl) => owl.name);
 
     const allOptions = [...incorrectOptions.slice(0, 2), correctOwl.name];
@@ -53,6 +54,7 @@ export default function OwlContainer() {
     }
 
     // Load a new question after 2 seconds
+    // Make a button state that can disable clicks until the new 'question' has loaded, and add it to here
     setTimeout(() => {
       const newOwl = getRandomOwl();
       setCurrentOwl(newOwl);
