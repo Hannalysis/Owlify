@@ -3,7 +3,7 @@
 
 Overview: An image question-themed Owl Quiz with multiple choice answers, to test your knowledge on naming the 5 most common Owls residing within the UK.
 
-  <img align = "center" src="/readme-images/readme-image.jpg" alt="Owl & Multiple Choice Answers">
+  <img align = "center" src="/readme-images/readme-image.PNG" alt="Owl & Multiple Choice Answers">
 
 ------------
 
