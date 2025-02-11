@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import OwlQuestions from './OwlQuestions';
+import { useState } from "react";
 
 import barnOwl from "../owl-images/barn-owl.png";
 import littleOwl from "../owl-images/little-owl.png";
