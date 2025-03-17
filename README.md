@@ -53,4 +53,4 @@ At School of Code, our team was challenged to build a React application and deli
 ## Authors
 
 Created by Team HOO  
-<i>aka Hannalysis and Oweshbin</i>
+<i>aka @Hannalysis, @Oweshbin and @DamonSeahash5</i>
