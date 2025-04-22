@@ -24,29 +24,32 @@ At School of Code, our team was challenged to build a React application and deli
 
 <h2>Documentation</h2>
 
-<h3><u>MVP</u></h3>
+<h3><u>MVP</u> - Completed 30/01/25</h3>
 
 - A random image to display with a set of 3 multiple choice buttons.
 - The image requires a matching correct answer, and two fake answers pulled from the remaining owl name pool.
 - A Small sample data size (5 owls).
 - Passable CSS.
 
-<h3><u>Update 1</u></h3>
+<h3><u>MS1</u> - Completed 31/0/1/25</h3>
 
 - A simple score tracker.
 - An edited Owl SFX, that triggers on every correct answer.
 
+<h3><u>MS2</u> - Completed 22/04/25</h3>
+
+- Make the app compatible for phone screens.
+
 ## Future Milestones
-
-<h3><u>MS2</u></h3>
-
-- More owls.
-- An initial starting state (aka to hide the Q & A).
-- More interesting CSS and/or transition animations.
 
 <h3><u>MS3</u></h3>
 
-- Make the app compatible for phone screens.
+- More owls.
+- More interesting CSS and/or transition animations.
+
+<h3><u>MS4</u></h3>
+
+- An initial starting state (aka to hide the Q & A).
 - Add background music, and/or additional ambience.
 
 
