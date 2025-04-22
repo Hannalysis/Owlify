@@ -2,7 +2,7 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  background-color: #242424;
+  /* background-color: #242424; */
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -10,14 +10,12 @@
   height: 100vh;
 }
 
-@media screen and (max-height: 1079px) {
-  .header {
-    display: none;
-  }
+* {
+  box-sizing: border-box;
 }
 
-@media screen and (max-height: 700px) {
-  .score {
+@media screen and (max-height: 668px) {
+  .header {
     display: none;
   }
 }
@@ -59,5 +57,48 @@ body {
   background-image: url('./owl-images/night-forest-grey-edit.png'); /* Ensure this is behind the Owl-Container */
   background-repeat: no-repeat; /* Prevents the image from repeating */
   background-position: center; /* Centres the image */
-  height: 100vh;
+  height: 100dvh;
+  background-size: cover; /* Accepting the minor pic stretch for more pleasant viewing */
+  box-sizing: border-box;
 }
+
+@media screen and (max-width: 767px) {
+  :root {
+    transform: scale(0.75);
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+  .header {
+    transform: scale(0.90);
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  body {
+    place-self: center;
+    background-size: cover;
+    transform: scale(0.90);
+  }
+}
+
+/* To centre the header on devices */
+
+@media screen and (max-width: 361px){
+  .header {
+    margin-left: 3.5%;
+  }
+}
+
+@media screen and (min-width: 362px) and (max-width: 376px) {
+  .header {
+    margin-left: 3%;
+  }
+}
+
+@media screen and (min-width: 377px) and (max-width: 400px){
+  .header {
+    margin-left: 1.5%;
+  }
+} 

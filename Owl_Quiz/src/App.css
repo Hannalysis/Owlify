@@ -101,3 +101,33 @@ img {
   margin-top: 20px;
 }
 
+@media screen and (max-width: 767px) {
+  .content {
+      transform: scale(0.75);
+      justify-self: center; 
+    }
+  .content-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* To centre the content container on devices */
+
+@media screen and (max-width: 361px){
+  .content-container {
+    margin-left: 3.5%;
+  }
+}
+
+@media screen and (min-width: 362px) and (max-width: 376px) {
+  .content-container {
+    margin-left: 3%;
+  }
+}
+
+@media screen and (min-width: 377px) and (max-width: 400px){
+  .content-container {
+    margin-left: 1.5%;
+  }
+} 
