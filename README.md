@@ -31,7 +31,7 @@ At School of Code, our team was challenged to build a React application and deli
 - A Small sample data size (5 owls).
 - Passable CSS.
 
-<h3><u>MS1</u> - Completed 31/0/1/25</h3>
+<h3><u>MS1</u> - Completed 31/01/25</h3>
 
 - A simple score tracker.
 - An edited Owl SFX, that triggers on every correct answer.
